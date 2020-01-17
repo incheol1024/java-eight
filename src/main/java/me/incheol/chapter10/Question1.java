@@ -25,8 +25,7 @@ public class Question1 {
         walk.forEach(System.out::println);
 
         return null;
-// gkgkgk
-        // angel2
+
     }
 
 
