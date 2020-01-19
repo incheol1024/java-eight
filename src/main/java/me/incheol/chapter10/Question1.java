@@ -16,7 +16,7 @@ public class Question1 {
 
     private final String word;
 
-    public Question1(Path path, String word) {
+    private Question1(Path path, String word) {
         this.path = path;
         this.word = word;
     }
@@ -26,15 +26,16 @@ public class Question1 {
     public List<Path> findFilesIncludingWord() throws IOException {
         return Files
                 .walk(path, 1, FileVisitOption.FOLLOW_LINKS)
+                .filter(path1 -> !Files.isDirectory(path1))
                 .filter(this::inspectFile)
                 .collect(Collectors.toList());
     }
 
-    public boolean inspectFile(Path path) {
+    private boolean inspectFile(Path path) {
         boolean isContain = false;
 
         try {
-            isContain = Files.lines(path, StandardCharsets.UTF_8)
+            isContain = Files.lines(path, StandardCharsets.ISO_8859_1)
                     .anyMatch(s -> s.contains(word));
         } catch (IOException e) {
             e.printStackTrace();
@@ -44,9 +45,9 @@ public class Question1 {
 
 
     public static void main(String[] args) throws IOException {
-
-        Question1 question1 = new Question1(Paths.get("D:/app"), "test");
-        question1.findFilesIncludingWord();
+        Question1 question1 = new Question1(Paths.get("D:\\app-test"), "test");
+        List<Path> filesIncludingWord = question1.findFilesIncludingWord();
+        filesIncludingWord.forEach(System.out::println);
     }
 
 
