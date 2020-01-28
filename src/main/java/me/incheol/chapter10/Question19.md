@@ -1,7 +1,7 @@
 
 *다음 스택 구현이 있다고 하자.*
 
-<pre><code>
+```java
     public class Stack{
         class Node{ Object value; Object next; }
         private Node top;
@@ -20,7 +20,7 @@
             return n.value;
         }    
     }
-</pre></code>
+```
 
 * 이 자료구조에 올바른 요소가 포함되지 않게 하는 방법 두 가지를 설명하라.
 
@@ -31,7 +31,7 @@
     
 
 
-```
+```java
 package me.incheol.chapter10;
 
 import java.util.concurrent.ExecutorService;
