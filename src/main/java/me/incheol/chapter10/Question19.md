@@ -98,3 +98,36 @@ public class Question19 {
 }
 ```
      
+* 결과
+```java
+.
+.
+.
+java.lang.Object@238e0d81
+java.lang.Object@31221be2
+java.lang.Object@377dca04
+null
+null
+100
+```
+
+콘솔로 출력한 결과값이다. 총 100번 루프를 돌았고 마지막 결과값 2개는 null이 나왔다.
+이는 스택에 여러개의 스레드가 100개의 데이터를 저장하려고 시도했으나 *어떤 이유*에서 98개만 저장이 되었다.
+*어떤 이유*는 무엇일까?
+
+```java
+        public void push(Object newValue) {
+            Node n = new Node();
+            n.value = newValue;
+            n.next = top;
+            top = n;
+        }
+```
+Stack 클래스의 push 메서드를 다시 살펴보자.  
+메서드 안에서는 Node 객체를 생성해서 node의 value와 next 상태를 변경한 뒤
+stack 객체의 top 필드의 상태를 변경하려고 한다.
+여기서 Node 객체는 메서드안에서 지역적(스레드별 스택프레임에서) 생성되므로 
+스레드 간 공유되지 않는다.   
+그러나 top 필드는 stack 객체 안에서 갖고있는 상태값이므로 push 메서드를 사용하고
+ 있는 스레드들이 공통으로 사용중이다. 
+ 결국 top 필드의 상태값의 원자성이 지켜지지 않으므로 생겨난 문제이다.
