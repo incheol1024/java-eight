@@ -31,6 +31,7 @@
     
 
 <pre><code>
+```
 package me.incheol.chapter10;
 
 import java.util.concurrent.ExecutorService;
@@ -95,5 +96,6 @@ public class Question19 {
         }
     }
 }
+```
 </pre></code>
      
