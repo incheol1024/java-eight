@@ -30,7 +30,7 @@
     * 해당 스택 객체에 데이터가 10개가 적재 되어 있는지 확인해보자.
     
 
-<pre><code>
+
 ```
 package me.incheol.chapter10;
 
@@ -97,5 +97,4 @@ public class Question19 {
     }
 }
 ```
-</pre></code>
      
