@@ -29,20 +29,3 @@
     * [문제10 코딩](https://github.com/incheol1024/java-eight/blob/master/src/main/java/me/incheol/chapter10/Question10.java)
     
     
-    
-com  
-&nbsp;+- etoos  
-&nbsp;&nbsp;+- bcp  
-&nbsp;&nbsp;+- Application.java  
-&nbsp;&nbsp;&nbsp;|  
-&nbsp;&nbsp;&nbsp;+- customer
-      |   +- Customer.java
-      |   +- CustomerController.java
-      |   +- CustomerService.java
-      |   +- CustomerRepository.java
-      |
-       +- order
-                 +- Order.java
-                 +- OrderController.java
-                 +- OrderService.java
-                 +- OrderRepository.java
