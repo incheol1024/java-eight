@@ -30,12 +30,12 @@
     
     
     
-    com  
-  +- etoos  
-    +- bcp  
-      +- Application.java  
-      |  
-      +- customer
+com  
+&nbsp;+- etoos  
+&nbsp;&nbsp;+- bcp  
+&nbsp;&nbsp;+- Application.java  
+&nbsp;&nbsp;&nbsp;|  
+&nbsp;&nbsp;&nbsp;+- customer
       |   +- Customer.java
       |   +- CustomerController.java
       |   +- CustomerService.java
